@@ -20,6 +20,7 @@ TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 TARGET_NO_BOOTLOADER := true
 
@@ -151,6 +152,8 @@ USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 USE_DEVICE_SPECIFIC_CAMERA:= true
 
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
+
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
